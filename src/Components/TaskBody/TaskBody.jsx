@@ -10,18 +10,12 @@ import { changeTaskFive } from '../../store/userSlice';
 import { changeTaskSix } from '../../store/userSlice';
 import { useNavigate } from 'react-router-dom'
 
-
-
-
-
-
-
 import './Assets/styles.css'
 import { Link } from 'react-router-dom';
 
 function TaskBody() {
-  const navigate = useNavigate()
 
+/*------------------ REDUX STATE ------------------------*/
   const taskOne = useSelector((state) => state.user.taskOne);
   const taskTwo = useSelector((state) => state.user.taskTwo);
   const taskThree = useSelector((state) => state.user.taskThree);
@@ -29,21 +23,14 @@ function TaskBody() {
   const taskFive = useSelector((state) => state.user.taskFive);
   const taskSix = useSelector((state) => state.user.taskSix);
 
-
+  const navigate = useNavigate()
   const dispatch = useDispatch();
-
- 
-
-
-
   const location = useLocation();
-  console.log(location)
-
 
 const hanldeSave = ()=>{
 
 
-
+/*------------------------ SAVE TASK ---------------------------*/
 switch(location.state.items.id){
   
 case 1:
@@ -91,13 +78,7 @@ case 6:
   dispatch(changeTaskSix([{one : true}])).then(navigate('/cards'))
 break
 
-}
-
-
-}
-
-
-
+}}
 
   const numberTask = location.state.index + 1
 
@@ -113,22 +94,19 @@ break
                       <h2>Task # {location.state.items.id}.{numberTask}</h2>
                       <p>What do you want to do with this task?</p>
                       </div>
-                   
                     <div className='buttonsActive'>
-
                     <Button
                     onClick={hanldeSave}
                     className='savetask'
                     variant="contained" 
                     >Finish homework!</Button>
-                <Link to="/cards">
+                    <Link to="/cards">
                     <Button
                     
                     className='error'
                     variant="contained" 
                     >postpone homework</Button>
-                </Link>
-                    
+                    </Link>
                     </div>
                 </div>
             </div>

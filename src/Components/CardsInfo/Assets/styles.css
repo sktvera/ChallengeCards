@@ -7,6 +7,10 @@
 }
 .title H2{
     color: white !important;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 50px;
 }
 .contanerRegister-grid{
     display: grid;
@@ -40,6 +44,24 @@
      width: 100%;
     }
 }
+
+@media (max-width:800px) {
+    .containedRegister{
+        overflow-y: scroll;
+    }
+	.cards-item{
+        grid-template-columns:auto !important ;
+        align-items: center;
+    }
+    .contanerRegister-grid{
+        grid-template-rows: 20% auto;
+        gap: 40px;
+    }
+    .cards{display: flex;
+    justify-content: center;
+align-items: center;}
+}
+
 @media (max-width:700px) {
 	.title{
      text-align: center;

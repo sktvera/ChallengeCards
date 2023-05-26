@@ -7,6 +7,7 @@ import './Assets/styles.css'
 function WelcomeHome() {
   const navigate = useNavigate();
 
+/*  ---------------- NAVIGATE TO CARDS ----------------------------*/
   const navigateTologin = () => {
     navigate(`/cards`);
     }
@@ -16,7 +17,6 @@ function WelcomeHome() {
         <Grid >
               <Box className='itemWelcome'>
                   <h1>The Challenge Cards</h1>
-                  
               </Box>
               <Box className='itemWelcome'>
                   <label>I'm ready to see the challenge</label>

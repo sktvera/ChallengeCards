@@ -8,7 +8,9 @@ import './Assets/styles.css'
 
 function DynamicButton({items, index, item, dataDisable}) {
 
+    const navigate = useNavigate()
 
+/* ------------------ALERTS -----------------------------*/
     const [alertTaskSix,setAlertTaskSix]=useState(false)
     const [alertTaskFivezero,setAlertTaskFivezero]=useState(false)
     const [alertTaskFiveOne,setAlertTaskFiveOne]=useState(false)
@@ -22,7 +24,7 @@ function DynamicButton({items, index, item, dataDisable}) {
 
     const [alertTaskTwoOne,setAlertTaskTwoOne]=useState(false)
 
-
+/* ------------------REDUX STATE -----------------------------*/
     const taskOne = useSelector((state) => state.user.taskOne);
     const taskTwo = useSelector((state) => state.user.taskTwo);
     const taskThree = useSelector((state) => state.user.taskThree);
@@ -30,9 +32,9 @@ function DynamicButton({items, index, item, dataDisable}) {
     const taskFive = useSelector((state) => state.user.taskFive);
     const taskSix = useSelector((state) => state.user.taskSix);
   
-    console.log(index > 0 ? index :false)
-  
 
+  
+/* ------------------CLOSE ALERTS -----------------------------*/
 const handleCloseAlert = ()=>{
     setAlertTaskSix(false)
     setAlertTaskFiveOne(false)
@@ -45,6 +47,8 @@ const handleCloseAlert = ()=>{
     setAlertTaskTwoOne(false)
 }
 
+
+/* ------------------NAVIGATE AND VALIDATE -----------------------------*/
 const handleNavigate = ()=>{
 /* Task #1 */
     if((items.id === 1) ){
@@ -93,14 +97,14 @@ if(items.id === 5 && index === 1 && taskFive[0].one === false){setAlertTaskFiveO
         navigate(`/task/:${items.id}`,{state:{items, index}})
     }
  /*   validate Task #6  */
-if(items.id === 6 && index === 0 && taskFive[1].two === false){setAlertTaskSix(true)}
-
-
-   
+if(items.id === 6 && index === 0 && taskFive[1].two === false){setAlertTaskSix(true)}  
 }
 
-    const navigate = useNavigate()
+    
+
   return (
+
+    /* ------------------ALERTS -----------------------------*/
    <>
    {alertTaskSix === true?
    <div onClick={handleCloseAlert} className='alertTaskSix'>
@@ -138,7 +142,6 @@ if(items.id === 6 && index === 0 && taskFive[1].two === false){setAlertTaskSix(t
    </div>
    :null
    }
-
 {alertTaskThreeOne === true?
    <div onClick={handleCloseAlert} className='alertTaskThree'>
     <p>must perform task 2</p>
@@ -151,18 +154,12 @@ if(items.id === 6 && index === 0 && taskFive[1].two === false){setAlertTaskSix(t
    </div>
    :null
    }
-
-
 {alertTaskTwoOne === true?
    <div onClick={handleCloseAlert} className='alertTaskSix'>
     <p>must perform task 1</p>
    </div>
    :null
    }
-
-
-
-
 
     {dataDisable === true ?
     <Button className='active' disabled={dataDisable}  size="small"> ready </Button>

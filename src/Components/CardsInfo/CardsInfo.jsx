@@ -1,19 +1,9 @@
-import React, { useState } from 'react'
-
-
+import React from 'react'
 import CardItem from '../CardItem/CardItem'
-
-
-
 
 import './Assets/styles.css'
 
 function CardsInfo() {
-
-
-
-
-
 
    const cardAll = [
 {   id:1,
@@ -48,8 +38,7 @@ function CardsInfo() {
 }
    ]
 
-       
-        
+         
 
   return (
     <div className='containedRegister'>
