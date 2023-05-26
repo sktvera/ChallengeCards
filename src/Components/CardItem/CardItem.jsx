@@ -21,15 +21,6 @@ function CardItem({items}) {
 
  
 
-
-
-
-
-
-
-
-
-
   return (
     <Card className='bodyCard'>
       <CardContent>

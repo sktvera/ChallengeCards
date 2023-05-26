@@ -1,5 +1,6 @@
 .bodyCard{
     width: 200px;
+    position: relative;
   }
   .ButtonsCard{
     display: flex;
