@@ -4,7 +4,7 @@
     overflow-y: scroll;
 }
 .EnterprisBody{
-    height: 1000px;
+    height: 700px;
     margin: 0px 10% 0px 10%;
     width: 80%;
 }
@@ -12,10 +12,7 @@
    height: 1px;
    background-color: rgba(0, 0, 0, 0.126);
 }
-.imgs{
-    display: grid;
-    grid-template-rows: auto auto auto auto auto auto auto;
-}
+
 .item-img{
     display: flex;
     justify-content: center;
@@ -30,14 +27,14 @@
 
 @media (max-width:700px) {
     .item-img img{
-        width: 400px;
-        height: 400px;
+        width: 700;
+        height: 600px;
     }
   }
   @media (max-width:400px) {
     .item-img img{
-        width: 250px;
-        height: 250px;
+        width: 550px;
+        height: 450px;
     }
     .item-img{
         display: flex;

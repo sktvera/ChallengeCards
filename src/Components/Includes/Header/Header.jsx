@@ -35,7 +35,7 @@ function Header() {
             <Link
               variant="button"
               color="text.primary"
-              to="/Enterprise"
+              to="/challenge"
               sx={{ my: 1, mx: 1.5 }}
             >
               challenge
